@@ -276,7 +276,7 @@ class Player {
     });
     // 暂停
     this.player.on("pause", () => {
-      window.document.title = "SPlayer";
+      if (!isElectron) window.document.title = "SPlayer";
       // ipc
       if (isElectron) window.electron.ipcRenderer.send("play-status-change", false);
       console.log("⏸️ song pause:", playSongData);
@@ -1028,8 +1028,12 @@ class Player {
         window.$message.success("已退出心动模式");
         return;
       }
-      if (!isLogin()) {
-        openUserLogin(true);
+      if (isLogin() !== 1) {
+        if (isLogin() === 0) {
+          openUserLogin(true);
+        } else {
+          window.$message.warning("该登录模式暂不支持该操作");
+        }
         return;
       }
       if (statusStore.playHeartbeatMode) {
