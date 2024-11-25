@@ -10,7 +10,7 @@ const useSiteSettingsStore = defineStore("siteSettings", {
       showTaskbarProgress: false, // 显示歌曲任务栏进度
       showSearchHistory: true, // 搜索历史
       autoSignIn: true, // 自动签到
-      showGithub: true,
+      showGithub: false,
       showSider: true, // 显示侧边栏
       siderShowCover: false, // 侧边栏显示封面
       autoCheckUpdates: true, // 自动检查更新
