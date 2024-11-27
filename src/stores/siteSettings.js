@@ -22,7 +22,7 @@ const useSiteSettingsStore = defineStore("siteSettings", {
       themeAuto: false,
       themeTypeName: "red",
       themeTypeData: {},
-      themeAutoCover: true, // 主题色跟随封面
+      themeAutoCover: false, // 主题色跟随封面
       themeAutoCoverType: "secondary",
       // 播放部分
       playCoverType: "cover", // 播放器样式
@@ -57,7 +57,7 @@ const useSiteSettingsStore = defineStore("siteSettings", {
       downloadCover: true, // 同时下载封面
       downloadLyrics: true, // 同时下载歌词
       // 网络部分
-      useRealIP: false, // 是否使用真实IP地址
+      useRealIP: true, // 是否使用真实IP地址
       realIP: "116.25.146.177", // 真实IP地址
       proxyProtocol: "off", // 代理协议
       proxyServe: "127.0.0.1", // 代理地址
